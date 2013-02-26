@@ -6,12 +6,13 @@
 		<a href="/" rel="index"><h1>Route Finder</h1></a>
 	</header>
 	<section id="content">
-		
-		<form id="search" action="/selected_facets" method="get">
+
+		<!--State transfer for searching for Routes-->
+		<form class="search" action="/selected_facets" method="get">
 			<h2>Search for Routes</h2>
-			
+
 			Includes text: <input type="text" name="match-text" /><br />
-			
+
 			Region:<br />
 			<input type="checkbox" name="trail-region" value="South" />South<br/>
 			<input type="checkbox" name="trail-region" value="Northeast" />Northeast<br />
@@ -37,35 +38,44 @@
 			<input type="submit" value="Search"/>
 		</form><!--#search end-->
 
-		<form id="new" action="/{route-number}" method="post">
+		<!--State transfer for posting a new Route-->
+		<form class="new-route" action="/{route-number}" method="post">
 			<h2>Create New Route</h2>
-			
-			Name your route: <input type="text" name="new-route-name" /><br />
-			
-			Describe the route: <textarea name="new-route-description" /><br />
 
-			List the coordinates of your route: <textarea name="new-coordinates" /><br />
-			
+			Name your route: <input type="text" name="route-name" /><br />
+
+			Describe the route: <textarea name="route-description"></textarea><br />
+
+			List the coordinates of your route: <textarea name="coordinates"></textarea><br />
+
 			What type of trail(s) does the route contain?<br />
-			<input type="checkbox" name="new-trail-type" value="greenway" />Greenway<br/>
-			<input type="checkbox" name="new-trail-type" value="rail" />Rail Trail<br />
-			<input type="checkbox" name="new-trail-type" value="backcountry" />Backcountry<br />
-			<input type="checkbox" name="new-trail-type" value="urban" />Urban trail/bikeway<br />
+			<input type="checkbox" name="trail-type" value="greenway" />Greenway<br/>
+			<input type="checkbox" name="trail-type" value="rail" />Rail Trail<br />
+			<input type="checkbox" name="trail-type" value="backcountry" />Backcountry<br />
+			<input type="checkbox" name="trail-type" value="urban" />Urban trail/bikeway<br />
 
 			How difficult is the route?<br />
-			<input type="radio" name="new-trail-difficulty" value="easy" />Easy<br/>
-			<input type="radio" name="new-trail-difficulty" value="intermediate" />Intermediate<br />
-			<input type="radio" name="new-trail-difficulty" value="strenuous" />Strenuous<br />
+			<input type="radio" name="trail-difficulty" value="easy" />Easy<br/>
+			<input type="radio" name="trail-difficulty" value="intermediate" />Intermediate<br />
+			<input type="radio" name="trail-difficulty" value="strenuous" />Strenuous<br />
 
 			<input type="submit" value="Create Route" />
-		</form><!--#new end-->
+		</form><!--#new-route end-->
 
+		<!--Representing a list of Routes-->
 		<section id="routes">
 			<h2>All Routes</h2>
 			<ul class="all">
-				<li><a href="/{route1-number}" rel="route">Route 1 name</a></li>
-				<li><a href="/{route2-number}" rel="route">Route 2 name</a></li>
-				<li><a href="/{route3-number}" rel="route">Route 3 name</a></li>
+				<li class="route"><span class="route-name"><a href="/{route1-number}" rel="route">Route 1 name</a></span><br />
+					<span class="username">Created by usernameA</span>
+				</li>
+				<li class="route"><span class="route-name"><a href="/{route2-number}" rel="route">Route 2 name</a></span><br />
+					<span class="username">Created by usernameB</span>
+				</li>
+				...
+				<li class="route"><span class="route-name"><a href="/{routeN-number}" rel="route">Route N name</a></span><br />
+					<span class="username">Created by usernameN</span>
+				</li>
 			</ul>
 		</section><!--#routes end-->
 

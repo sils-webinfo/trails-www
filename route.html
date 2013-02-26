@@ -1,0 +1,60 @@
+<html>
+<head>
+</head>
+<body>
+	<header>
+		<a href="/" rel="index"><h1>Route Finder</h1></a>
+	</header>
+	<section id="content">
+		<section class="route">
+
+			<h2 class="route-name">Route Name</h2>
+
+			<h3 class="username">Created by Username</h3>
+
+			<span class="description">Description of the route. User-generated from textarea input.</span><br />
+
+			Trail Type: <span class="trail-type">Urban</span>, <span class="trail-type">Greenway</span><br />
+
+			Region: <span class="trail-region">Midwest</span><br />
+
+			Length: <span class="trail-length">4.4 miles</span><br />
+
+			Difficulty: <span class="trail-difficulty">Easy</span><br />
+
+			<ul class="coordinates">
+				<li class="route-point"><span class="latitude">52.686</span>; <span class="longitude">-2.193</span></li>
+				<li class="route-point"><span class="latitude">52.890</span>; <span class="longitude">-2.003</span></li>
+				<li class="route-point"><span class="latitude">53.081</span>; <span class="longitude">-2.001</span></li>
+			</ul>
+
+		</section><!--.route end-->
+
+		<form class="update-route" action="/{route-number}" method="post">
+			<h2>Update Route</h2>
+
+			New name: <input type="text" name="route-name" /><br />
+
+			New description: <textarea name="route-description"></textarea><br />
+
+			New coordinates: <textarea name="coordinates"></textarea><br />
+
+			New trail types: <br />
+			<input type="checkbox" name="trail-type" value="greenway" />Greenway<br/>
+			<input type="checkbox" name="trail-type" value="rail" />Rail Trail<br />
+			<input type="checkbox" name="trail-type" value="backcountry" />Backcountry<br />
+			<input type="checkbox" name="trail-type" value="urban" />Urban trail/bikeway<br />
+
+			New difficulty: <br />
+			<input type="radio" name="trail-difficulty" value="easy" />Easy<br/>
+			<input type="radio" name="trail-difficulty" value="intermediate" />Intermediate<br />
+			<input type="radio" name="trail-difficulty" value="strenuous" />Strenuous<br />
+
+			<input type="submit" value="Create Route" />
+		</form><!--#update-route end-->
+
+		<!-- Delete route somehow -->
+
+	</section><!--#content end-->
+</body>
+</html>
