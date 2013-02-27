@@ -1,16 +1,14 @@
 #Route Finder Hypermedia Type
 
-Note: Because a graphical geospatial interface seemed outside of the scope of this assignment, all route representations are treated simply as a list of latitude/longitude coordinates.
-
 ##Attribute Values
 
 **ID attributes**
 
 *content*
->Applied to a SECTION tag to distinguish it from the header and to mark it as a container of all other content on the page.
+>Applied to a SECTION tag. All (non-header) content on the page.
 
 *routes*
->Applied to a SECTION tag to mark a list of routes.
+>Applied to a SECTION tag. A list of routes.
 
 
 **Class attributes**
